@@ -1,0 +1,53 @@
+{
+  "_comment": "targetName must match the Vuforia target name in StreamingAssets/Vuforia/KitchenMacros.xml (matching is case-insensitive). All macro values are per 100 g. JSON has no comment syntax, so JsonUtility simply ignores this key. PROVENANCE: sedani and lenticchie are transcribed from the physical packages; broccoli and salmone are realistic estimates.",
+  "products": [
+    {
+      "targetName": "sedani",
+      "displayName": "Sedani Rigati",
+      "kcalPer100g": 359,
+      "proteinPer100g": 13,
+      "carbsPer100g": 71,
+      "fatPer100g": 2,
+      "defaultPortionGrams": 80,
+      "minPortionGrams": 20,
+      "maxPortionGrams": 200,
+      "note": "Dry weight"
+    },
+    {
+      "targetName": "salmone",
+      "displayName": "Salmone Affumicato",
+      "kcalPer100g": 202,
+      "proteinPer100g": 24.5,
+      "carbsPer100g": 0.5,
+      "fatPer100g": 11.5,
+      "defaultPortionGrams": 50,
+      "minPortionGrams": 10,
+      "maxPortionGrams": 200,
+      "note": "Estimated values"
+    },
+    {
+      "targetName": "broccoli",
+      "displayName": "Broccoli",
+      "kcalPer100g": 34,
+      "proteinPer100g": 2.8,
+      "carbsPer100g": 2.5,
+      "fatPer100g": 0.4,
+      "defaultPortionGrams": 150,
+      "minPortionGrams": 25,
+      "maxPortionGrams": 400,
+      "note": "Estimated values"
+    },
+    {
+      "targetName": "lenticchie",
+      "displayName": "Lenticchie",
+      "kcalPer100g": 88,
+      "proteinPer100g": 6.4,
+      "carbsPer100g": 12.1,
+      "fatPer100g": 0.4,
+      "defaultPortionGrams": 120,
+      "minPortionGrams": 20,
+      "maxPortionGrams": 300,
+      "note": "Canned, drained"
+    }
+  ]
+}

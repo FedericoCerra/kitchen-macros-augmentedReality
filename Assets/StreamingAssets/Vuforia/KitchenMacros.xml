@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="salmone" size="0.187000 0.222568" />
+    <ImageTarget name="sedani" size="0.183000 0.192539" />
+    <ImageTarget name="broccoli" size="0.210000 0.178333" />
+    <CylinderTarget name="lenticchie" sideLength="0.101000"/>
+  </Tracking>
+</QCARConfig>

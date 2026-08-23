@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------------------
+# Unity generated folders.
+#
+# Everything here is rebuilt by the editor from Assets/ + ProjectSettings/ +
+# Packages/, so committing it only bloats the repository (Library/ alone is
+# several GB) and produces constant spurious diffs.
+# ---------------------------------------------------------------------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+.utmp/
+
+# Vuforia local runtime cache (licence handshake / telemetry). Machine-specific.
+QCAR/
+
+# ---------------------------------------------------------------------------
+# IDE / solution files. Regenerated on demand by the Unity editor.
+# ---------------------------------------------------------------------------
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+ExportedObj/
+
+# ---------------------------------------------------------------------------
+# Build artefacts
+# ---------------------------------------------------------------------------
+*.apk
+*.aab
+*.app
+*.unitypackage
+crashlytics-build.properties
+sysinfo.txt
+
+# ---------------------------------------------------------------------------
+# OS noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Deliberately NOT ignored, despite what some Unity .gitignore templates say:
+#
+#   Assets/**/*.meta      Unity identifies every asset by the GUID in its .meta
+#                         file. Dropping them breaks every reference in every
+#                         scene and prefab on a fresh clone.
+#   Assets/StreamingAssets/Vuforia/   the target database (.dat/.xml) is source,
+#                         not build output -- the app cannot track without it.
+#   ProjectSettings/      contains the render pipeline, input handler, package
+#                         name and Vuforia licence configuration.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Too large for GitHub, and not ours to redistribute.
+#
+# The Vuforia package tarball is 138 MB, over GitHub's 100 MB hard per-file
+# limit, so a push containing it is rejected outright. It is also PTC's
+# redistributable, not project source. See README for how to restore it.
+# ---------------------------------------------------------------------------
+Packages/*.tgz
+
+# Vuforia Core Samples: ~90 MB of astronaut models and textures, kept locally as
+# reference implementations but referenced by nothing in this application.
+Assets/SamplesResources/
+Assets/SamplesResources.meta
+
+# Internal working notes, kept locally but not part of the deliverable.
+docs/DIARIO-SVILUPPO.md
