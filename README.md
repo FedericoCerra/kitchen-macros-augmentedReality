@@ -116,7 +116,7 @@ You set the portion with a slider, which starts at a sensible default for that p
 
 | Script | Attached to | What it does |
 |---|---|---|
-| `ProductCatalog` | `AppRoot` | Reads products.json and finds a product by target name |
+| `ProductCatalog` | `AppRoot` | Holds the data classes, reads products.json, finds a product by target name |
 | `MealSession` | `AppRoot` | Keeps the list of added items and the running totals |
 | `SelectionManager` | `AppRoot` | Turns a tap into a selected product |
 | `TrackedProduct` | each of the 4 targets | Links that target to its product, creates the panel, drives the outline |
@@ -124,7 +124,6 @@ You set the portion with a slider, which starts at a sensible default for that p
 | `PortionSelectorPanel` | `KitchenMacrosUI` | The portion card: slider and Add button |
 | `ProductInfoPanel` | panel prefab | Fills in the text on the world-space panel |
 | `Billboard` | panel prefab, and the can's outline | Turns the object to face the camera |
-| `ProductData` | nothing | Just a data class, created when the JSON is read |
 
 #### Start-up order
 
@@ -181,6 +180,13 @@ Both are event-driven, neither has an `Update`. `PortionSelectorPanel` listens f
 selection and opens or closes the card; `MealHudView` listens for a meal change and rewrites
 the totals.
 
+
+#### The data classes
+
+`MacroValues`, `ProductData` and `ProductCatalogJson` are plain classes, not
+`MonoBehaviour`s, so they are not attached to anything: `JsonUtility` creates them when the
+file is read. They live in `ProductCatalog.cs` next to the code that loads them, because a
+`MonoBehaviour` has to be alone in a file named after it but a plain class does not.
 
 #### The two on the panel prefab
 
