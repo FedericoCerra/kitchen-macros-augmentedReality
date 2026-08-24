@@ -255,5 +255,5 @@ On-device builds are completely fine, so I developed on the phone instead.
 ## 5. Project Resources
 
 - **Repository:** https://github.com/FedericoCerra/kitchen-macros-augmentedReality
-- **Demonstration video:** _[link]_
+- **Demonstration video:** [docs/demo.mp4](docs/demo.mp4)
 
