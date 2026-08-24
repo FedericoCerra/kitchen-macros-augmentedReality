@@ -19,7 +19,11 @@ I registered four products: a box of pasta, a package of smoked salmon, a packag
 broccoli, and a can of lentils. The first three are flat Image Targets, the can is a Cylinder
 Target.
 
-<!-- TODO: a screenshot of the app running on the phone, panel anchored on a product -->
+![The app running on the phone](docs/images/app-running.jpg)
+
+*The lentils can tracked, with the outline marking the tappable area and the panel anchored
+above it. The bar at the bottom shows the total after adding one 120 g portion: 106 kcal,
+which is 88 × 1.2, with the three macros scaled by the same factor.*
 
 ## 2. Tools, Libraries and SDKs
 
