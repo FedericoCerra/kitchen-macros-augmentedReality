@@ -12,7 +12,6 @@ namespace KitchenMacros
 
         [SerializeField] bool keepUpright = true;
 
-
         [SerializeField] float rotationDamping = 10f;
 
         Camera _camera;
@@ -26,7 +25,6 @@ namespace KitchenMacros
                 _camera = Camera.main;
                 if (_camera == null) return;
             }
-
 
             var camTransform = _camera.transform;
             var forward = camTransform.forward;

@@ -93,7 +93,6 @@ namespace KitchenMacros
 
         public void ClearSelection() => Select(null);
 
-
         bool IsOverBlockingUI(Vector2 screenPosition)
         {
             var eventSystem = EventSystem.current;

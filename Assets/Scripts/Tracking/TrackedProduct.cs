@@ -44,7 +44,6 @@ namespace KitchenMacros
             _bounds = GetComponent<BoxCollider>();
             SetHighlight(false);
 
-
             _observer.OnTargetStatusChanged += HandleStatusChanged;
         }
 
@@ -57,7 +56,6 @@ namespace KitchenMacros
                 Debug.LogError($"[TrackedProduct] No ProductCatalog in the scene ('{name}').");
                 return;
             }
-
 
             BindProduct();
         }
@@ -81,9 +79,7 @@ namespace KitchenMacros
         {
             if (_panel != null || infoPanelPrefab == null) return;
 
-
             _panel = Instantiate(infoPanelPrefab, transform);
-
 
             _panel.transform.localScale = infoPanelPrefab.transform.localScale * panelScale;
 
@@ -99,13 +95,11 @@ namespace KitchenMacros
         {
             if (_panel == null || !_panel.gameObject.activeSelf) return;
 
-
             var center = _bounds != null ? transform.TransformPoint(_bounds.center) : transform.position;
 
             _panel.transform.position =
                 center + Vector3.up * (ExtentAlongWorldUp() + _panelHalfHeight + panelClearance);
         }
-
 
         float ExtentAlongWorldUp()
         {
@@ -149,7 +143,6 @@ namespace KitchenMacros
                 if (canvas != null) canvas.enabled = true;
             }
 
-
             SetHighlight(IsTracked && Product != null);
         }
 
@@ -166,7 +159,6 @@ namespace KitchenMacros
             if (highlightRenderers == null || highlightRenderers.Length == 0) return;
             if (!IsTracked || Product == null) return;
 
-
             if (_isSelected)
             {
                 ApplyHighlightColor(highlightSelectedColor);
@@ -180,7 +172,6 @@ namespace KitchenMacros
         void ApplyHighlightColor(Color color)
         {
             if (highlightRenderers == null) return;
-
 
             _propertyBlock ??= new MaterialPropertyBlock();
 

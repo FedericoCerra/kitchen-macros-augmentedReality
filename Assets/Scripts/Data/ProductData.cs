@@ -28,7 +28,6 @@ namespace KitchenMacros
             new MacroValues(a.Kcal + b.Kcal, a.Protein + b.Protein, a.Carbs + b.Carbs, a.Fat + b.Fat);
     }
 
-
     [Serializable]
     public class ProductData
     {
@@ -63,7 +62,6 @@ namespace KitchenMacros
             defaultPortionGrams = Mathf.Clamp(defaultPortionGrams, minPortionGrams, maxPortionGrams);
         }
     }
-
 
     [Serializable]
     public class ProductCatalogJson

@@ -18,7 +18,6 @@ namespace KitchenMacros
 
         public string LoadError { get; private set; }
 
-
         readonly Dictionary<string, ProductData> _byTargetName =
             new Dictionary<string, ProductData>(StringComparer.OrdinalIgnoreCase);
 

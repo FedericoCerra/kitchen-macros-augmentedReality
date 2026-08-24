@@ -7,26 +7,12 @@ using UnityEngine;
 
 namespace KitchenMacros
 {
-    public class MealEntry
-    {
-        public readonly string DisplayName;
-        public readonly float Grams;
-        public readonly MacroValues Macros;
-
-        public MealEntry(ProductData product, float grams)
-        {
-            DisplayName = product.displayName;
-            Grams = grams;
-            Macros = product.MacrosFor(grams);
-        }
-    }
-
     [DefaultExecutionOrder(-150)]
     public class MealSession : MonoBehaviour
     {
         public static MealSession Instance { get; private set; }
 
-        readonly List<MealEntry> _entries = new List<MealEntry>();
+        readonly List<MacroValues> _entries = new List<MacroValues>();
 
         /// <summary>Raised after any change. The HUD listens to this.</summary>
         public event Action OnMealChanged;
@@ -54,7 +40,7 @@ namespace KitchenMacros
         {
             if (product == null || grams <= 0f) return;
 
-            _entries.Add(new MealEntry(product, grams));
+            _entries.Add(product.MacrosFor(grams));
             Recalculate();
         }
 
@@ -77,7 +63,7 @@ namespace KitchenMacros
         void Recalculate()
         {
             var sum = MacroValues.Zero;
-            foreach (var entry in _entries) sum += entry.Macros;
+            foreach (var macros in _entries) sum += macros;
 
             Totals = sum;
             OnMealChanged?.Invoke();

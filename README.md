@@ -47,8 +47,7 @@ them, extracts features and rates Image Targets from one to five stars.
 
 ![The Vuforia Target Manager database](docs/images/target-manager.png)
 
-*All four targets rated five stars, except the lentils can: Cylinder Targets show `N/A`
-instead of a rating, which is expected and not an error.*
+
 
 ## 3. Design and Implementation
 
@@ -63,8 +62,7 @@ instead of a rating, which is expected and not an error.*
 
 ![The four targets in the Unity scene](docs/images/targets.png)
 
-*The four targets as Vuforia previews them in the scene. The three flat packages are Image
-Targets; the lentils can is a Cylinder Target, built from the label peeled off and scanned
+*The three flat packages are Image Targets; the lentils can is a Cylinder Target, built from the label peeled off and scanned
 flat.*
 
 ### 3.2 Product data in JSON
@@ -83,8 +81,6 @@ I did not want to hardcode nutritional values into GameObjects. All product data
   "defaultPortionGrams": 120
 }
 ```
-
-I used JSON to store the values so that it would be easier to sum them in the total counter.
 
 ### 3.3 What goes in world space and what goes on the screen
 
@@ -113,17 +109,10 @@ solid and changes colour once selected.
 ### 3.5 Portion entry and visual design
 
 You set the portion with a slider, which starts at a sensible default for that product
-(80 g for pasta, 50 g for salmon) and snaps to 5 g steps, like a kitchen scale.
+(80 g for pasta, 50 g for salmon) and snaps to 5 g steps.
 
-There is no text field on purpose. A soft keyboard covers half the screen and hides the
-camera feed, which breaks the AR context exactly when you are using it. I also had preset
-buttons at one point, but with the slider already there they were only clutter, so I removed
-them.
 
 ### 3.6 The scripts
-
-Nine scripts. Four are attached to objects in the scene, two live on the panel prefab, and
-one is not attached to anything at all.
 
 | Script | Attached to | What it does |
 |---|---|---|
@@ -225,7 +214,7 @@ product, and it is not in the scene because it is created at runtime.
 
 ### Unrolling the cylinder label
 
-A Cylinder Target in Vuforia needs a **flat** label image whose width equals the circumference (π·d).
+A Cylinder Target in Vuforia needs a flat label image whose width equals the circumference (π·d).
 Photographing the can as it looks does not work, because the curve compresses the artwork
 towards the edges.
 
@@ -241,12 +230,12 @@ of my box to do so, so I resorted to just Image Target.
 
 ### Standing box vs face-up box
 
-My first placement offset the panel in the *target's own* coordinate frame. That works for a
+My first placement offset the panel in the target's own coordinate frame. That works for a
 box standing upright, where the target's "up" is also the world's "up". It breaks for a
 package lying flat on the counter: local "up" points sideways, and the panel ends up lying on
 the table next to the product.
 
-I ended up moving the panel along **world up**, by the size of the
+I ended up moving the panel along world up, by the size of the
 target's bounding box projected onto that axis.
 
 ### Only one target at a time

@@ -33,7 +33,6 @@ namespace KitchenMacros
         ProductData _product;
         float _grams;
 
-
         bool _suppressSliderCallback;
 
         void Awake()
@@ -71,7 +70,6 @@ namespace KitchenMacros
             if (cardRoot != null) cardRoot.SetActive(true);
             if (productNameText != null) productNameText.text = _product.displayName;
 
-
             if (portionSlider != null)
             {
                 _suppressSliderCallback = true;
@@ -89,13 +87,11 @@ namespace KitchenMacros
             if (cardRoot != null) cardRoot.SetActive(false);
         }
 
-
         void CloseRequested()
         {
             if (SelectionManager.Instance != null) SelectionManager.Instance.ClearSelection();
             else Close();
         }
-
 
         void HandleSliderChanged(float value)
         {
