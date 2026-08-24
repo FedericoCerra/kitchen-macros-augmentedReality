@@ -28,7 +28,6 @@ namespace KitchenMacros
 
         [Header("Actions")]
         [SerializeField] Button addButton;
-        [SerializeField] Button closeButton;
 
         ProductData _product;
         float _grams;
@@ -39,7 +38,6 @@ namespace KitchenMacros
         {
             if (portionSlider != null) portionSlider.onValueChanged.AddListener(HandleSliderChanged);
             if (addButton != null) addButton.onClick.AddListener(AddToMeal);
-            if (closeButton != null) closeButton.onClick.AddListener(CloseRequested);
 
             if (cardRoot != null) cardRoot.SetActive(false);
         }
@@ -87,11 +85,6 @@ namespace KitchenMacros
             if (cardRoot != null) cardRoot.SetActive(false);
         }
 
-        void CloseRequested()
-        {
-            if (SelectionManager.Instance != null) SelectionManager.Instance.ClearSelection();
-            else Close();
-        }
 
         void HandleSliderChanged(float value)
         {

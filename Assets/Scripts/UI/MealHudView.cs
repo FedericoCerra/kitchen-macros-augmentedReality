@@ -25,20 +25,16 @@ namespace KitchenMacros
         [SerializeField] Button undoButton;
         [SerializeField] Button clearButton;
 
-        [Tooltip("Shows a products.json load failure on device, where the Console is not visible.")]
-        [SerializeField] TMP_Text catalogErrorText;
 
         void Awake()
         {
             if (undoButton != null) undoButton.onClick.AddListener(() => MealSession.Instance?.RemoveLast());
             if (clearButton != null) clearButton.onClick.AddListener(() => MealSession.Instance?.Clear());
-            if (catalogErrorText != null) catalogErrorText.gameObject.SetActive(false);
         }
 
         void Start()
         {
             if (MealSession.Instance != null) MealSession.Instance.OnMealChanged += Refresh;
-            if (ProductCatalog.Instance != null) ShowCatalogError();
 
             Refresh();
         }
@@ -48,16 +44,6 @@ namespace KitchenMacros
             if (MealSession.Instance != null) MealSession.Instance.OnMealChanged -= Refresh;
         }
 
-        void ShowCatalogError()
-        {
-            if (catalogErrorText == null) return;
-
-            var error = ProductCatalog.Instance.LoadError;
-            var hasError = !string.IsNullOrEmpty(error);
-
-            catalogErrorText.gameObject.SetActive(hasError);
-            if (hasError) catalogErrorText.text = error;
-        }
 
         void Refresh()
         {

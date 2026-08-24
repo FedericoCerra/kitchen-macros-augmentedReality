@@ -2,7 +2,6 @@
 // created by JsonUtility when products.json is read.
 
 using System;
-using UnityEngine;
 
 namespace KitchenMacros
 {
@@ -50,17 +49,6 @@ namespace KitchenMacros
             return new MacroValues(kcalPer100g * k, proteinPer100g * k, carbsPer100g * k, fatPer100g * k);
         }
 
-        public void Normalise()
-        {
-            if (string.IsNullOrWhiteSpace(displayName))
-                displayName = string.IsNullOrWhiteSpace(targetName) ? "Unknown product" : targetName;
-
-            if (minPortionGrams <= 0f) minPortionGrams = 10f;
-            if (maxPortionGrams <= minPortionGrams) maxPortionGrams = minPortionGrams + 290f;
-            if (defaultPortionGrams <= 0f) defaultPortionGrams = 100f;
-
-            defaultPortionGrams = Mathf.Clamp(defaultPortionGrams, minPortionGrams, maxPortionGrams);
-        }
     }
 
     [Serializable]

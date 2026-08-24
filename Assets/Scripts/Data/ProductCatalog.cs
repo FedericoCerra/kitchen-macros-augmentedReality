@@ -16,8 +16,6 @@ namespace KitchenMacros
 
         public static ProductCatalog Instance { get; private set; }
 
-        public string LoadError { get; private set; }
-
         readonly Dictionary<string, ProductData> _byTargetName =
             new Dictionary<string, ProductData>(StringComparer.OrdinalIgnoreCase);
 
@@ -51,15 +49,12 @@ namespace KitchenMacros
 
             if (asset == null)
             {
-                LoadError = $"Assets/Resources/{ResourceName}.json not found.";
-                Debug.LogError($"[Catalog] {LoadError}");
+                Debug.LogError($"[Catalog] Assets/Resources/{ResourceName}.json not found.");
                 return;
             }
 
             Parse(asset.text);
-
-            if (!string.IsNullOrEmpty(LoadError)) Debug.LogError($"[Catalog] {LoadError}");
-            else Debug.Log($"[Catalog] Loaded {_byTargetName.Count} products.");
+            Debug.Log($"[Catalog] Loaded {_byTargetName.Count} products.");
         }
 
         void Parse(string json)
@@ -72,21 +67,19 @@ namespace KitchenMacros
             }
             catch (Exception e)
             {
-                LoadError = $"products.json is not valid JSON: {e.Message}";
+                Debug.LogError($"[Catalog] products.json is not valid JSON: {e.Message}");
                 return;
             }
 
             if (parsed?.products == null || parsed.products.Length == 0)
             {
-                LoadError = "products.json has no \"products\" array.";
+                Debug.LogError("[Catalog] products.json has no \"products\" array.");
                 return;
             }
 
             foreach (var product in parsed.products)
             {
                 if (product == null || string.IsNullOrWhiteSpace(product.targetName)) continue;
-
-                product.Normalise();
 
                 if (_byTargetName.ContainsKey(product.targetName))
                 {
