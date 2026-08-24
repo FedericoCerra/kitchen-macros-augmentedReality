@@ -47,8 +47,6 @@ them, extracts features and rates Image Targets from one to five stars.
 
 ![The Vuforia Target Manager database](docs/images/target-manager.png)
 
-
-
 ## 3. Design and Implementation
 
 ### 3.1 The four targets
@@ -96,8 +94,6 @@ The world-space panels are billboarded to face the camera. I use *screen-aligned
 
 ![The screen-space UI in the Unity editor](docs/images/ui-in-unity.png)
 
-
-
 ### 3.4 Interaction: selecting a product
 
 Selection is a raycast from `Camera.main` through the tap point, against a box collider fitted
@@ -111,13 +107,12 @@ solid and changes colour once selected.
 You set the portion with a slider, which starts at a sensible default for that product
 (80 g for pasta, 50 g for salmon) and snaps to 5 g steps.
 
-
 ### 3.6 The scripts
 
 | Script | Attached to | What it does |
 |---|---|---|
 | `ProductCatalog` | `AppRoot` | Holds the data classes, reads products.json, finds a product by target name |
-| `MealSession` | `AppRoot` | Keeps the list of added items and the running totals |
+| `MealSession` | `AppRoot` | Keeps the added portions and the running totals |
 | `SelectionManager` | `AppRoot` | Turns a tap into a selected product |
 | `TrackedProduct` | each of the 4 targets | Links that target to its product, creates the panel, drives the outline |
 | `MealHudView` | `KitchenMacrosUI` | Shows the totals in the bottom bar |
@@ -136,7 +131,7 @@ Awake   -200  ProductCatalog        reads the JSON and fills the dictionary
         -150  MealSession           registers itself as Instance
          -50  SelectionManager      registers itself as Instance
            0  TrackedProduct        subscribes to Vuforia's status events
-           0  PortionSelectorPanel  hooks up the buttons
+           0  PortionSelectorPanel  hooks up the Add button
            0  MealHudView           hooks up Undo and Clear
 
 Start      0  TrackedProduct        asks the catalog for its product, creates the panel
@@ -180,7 +175,6 @@ Both are event-driven, neither has an `Update`. `PortionSelectorPanel` listens f
 selection and opens or closes the card; `MealHudView` listens for a meal change and rewrites
 the totals.
 
-
 #### The data classes
 
 `MacroValues`, `ProductData` and `ProductCatalogJson` are plain classes, not
@@ -212,9 +206,7 @@ panel; a tap goes from `SelectionManager` to `PortionSelectorPanel`, which write
 One prefab, `Assets/Prefabs/ProductInfoPanel.prefab`. It is the panel that appears over a
 product, and it is not in the scene because it is created at runtime.
 
-
 ![The info panel prefab](docs/images/panel-prefab.png)
-
 
 ## 4. Development Choices and Troubleshooting
 
@@ -264,5 +256,4 @@ On-device builds are completely fine, so I developed on the phone instead.
 
 - **Repository:** https://github.com/FedericoCerra/kitchen-macros-augmentedReality
 - **Demonstration video:** _[link]_
-
 
