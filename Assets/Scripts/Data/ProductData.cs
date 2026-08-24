@@ -32,7 +32,6 @@ namespace KitchenMacros
     {
         public string targetName;      // must match the Vuforia target name
         public string displayName;
-        public string note;            // e.g. "dry weight"
 
         public float kcalPer100g;
         public float proteinPer100g;

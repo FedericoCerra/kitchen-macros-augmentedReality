@@ -15,9 +15,6 @@ namespace KitchenMacros
         [SerializeField] TMP_Text carbsText;
         [SerializeField] TMP_Text fatText;
 
-        [Tooltip("Shows \"PER 100 g\", plus the product's note if it has one.")]
-        [SerializeField] TMP_Text captionText;
-
         public void Bind(ProductData product)
         {
             if (product == null) return;
@@ -28,10 +25,6 @@ namespace KitchenMacros
             if (carbsText != null) carbsText.text = $"C {product.carbsPer100g:0.#} g";
             if (fatText != null) fatText.text = $"F {product.fatPer100g:0.#} g";
 
-            if (captionText != null)
-                captionText.text = string.IsNullOrWhiteSpace(product.note)
-                    ? "PER 100 g"
-                    : $"PER 100 g  ·  {product.note.ToUpperInvariant()}";
         }
     }
 }

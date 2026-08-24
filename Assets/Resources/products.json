@@ -10,8 +10,7 @@
       "fatPer100g": 2,
       "defaultPortionGrams": 80,
       "minPortionGrams": 20,
-      "maxPortionGrams": 200,
-      "note": "Dry weight"
+      "maxPortionGrams": 200
     },
     {
       "targetName": "salmone",
@@ -22,8 +21,7 @@
       "fatPer100g": 11.5,
       "defaultPortionGrams": 50,
       "minPortionGrams": 10,
-      "maxPortionGrams": 200,
-      "note": "Estimated values"
+      "maxPortionGrams": 200
     },
     {
       "targetName": "broccoli",
@@ -34,8 +32,7 @@
       "fatPer100g": 0.4,
       "defaultPortionGrams": 150,
       "minPortionGrams": 25,
-      "maxPortionGrams": 400,
-      "note": "Estimated values"
+      "maxPortionGrams": 400
     },
     {
       "targetName": "lenticchie",
@@ -46,8 +43,7 @@
       "fatPer100g": 0.4,
       "defaultPortionGrams": 120,
       "minPortionGrams": 20,
-      "maxPortionGrams": 300,
-      "note": "Canned, drained"
+      "maxPortionGrams": 300
     }
   ]
 }
