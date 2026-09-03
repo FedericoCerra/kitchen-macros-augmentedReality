@@ -21,9 +21,6 @@ Target.
 
 ![The app running on the phone](docs/images/app-running.jpg)
 
-*The lentils can tracked, with the outline marking the tappable area and the panel anchored
-above it. The bar at the bottom shows the total after adding one 120 g portion: 106 kcal,
-which is 88 × 1.2, with the three macros scaled by the same factor.*
 
 ## 2. Tools, Libraries and SDKs
 
