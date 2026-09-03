@@ -2,7 +2,6 @@
 
 Federico Cerra [S5513839] Augmented Reality Project
 
-**Repository:** https://github.com/FedericoCerra/kitchen-macros-augmentedReality
 
 ---
 
