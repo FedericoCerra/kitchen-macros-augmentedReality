@@ -123,9 +123,7 @@ You set the portion with a slider, which starts at a sensible default for that p
 
 #### Start-up order
 
-Unity runs every `Awake`, then every `Start`, then `Update` and `LateUpdate` each frame. The
-order inside each phase comes from `[DefaultExecutionOrder]`, and I had to set it in three
-places:
+Unity runs every `Awake`, then every `Start`, then `Update` and `LateUpdate` each frame. Here's the activation order of my funcitons:
 
 ```
 Awake   -200  ProductCatalog        reads the JSON and fills the dictionary
@@ -205,7 +203,7 @@ panel; a tap goes from `SelectionManager` to `PortionSelectorPanel`, which write
 ### 3.7 The prefab
 
 One prefab, `Assets/Prefabs/ProductInfoPanel.prefab`. It is the panel that appears over a
-product, and it is not in the scene because it is created at runtime.
+product.
 
 ![The info panel prefab](docs/images/panel-prefab.png)
 
