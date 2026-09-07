@@ -1,6 +1,3 @@
-// Turns a world-space object to face the camera. On the panel prefab and on the
-// can's outline. Runs in LateUpdate so it sees the pose Vuforia wrote this frame.
-
 using UnityEngine;
 
 namespace KitchenMacros

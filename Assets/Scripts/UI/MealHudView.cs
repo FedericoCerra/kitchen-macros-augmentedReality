@@ -1,6 +1,3 @@
-// Writes the meal totals into the bottom bar. On the canvas. Runs only when
-// MealSession raises OnMealChanged, never every frame.
-
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,7 +51,6 @@ namespace KitchenMacros
             if (emptyStateRoot != null) emptyStateRoot.SetActive(count == 0);
             if (totalsRoot != null) totalsRoot.SetActive(count > 0);
 
-            // Values only; the units and macro names are static captions in the layout.
             if (kcalText != null) kcalText.text = $"{totals.Kcal:0}";
             if (proteinText != null) proteinText.text = $"{totals.Protein:0.#} g";
             if (carbsText != null) carbsText.text = $"{totals.Carbs:0.#} g";

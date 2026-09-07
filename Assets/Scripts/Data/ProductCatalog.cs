@@ -1,6 +1,4 @@
-// Product data and the catalog that loads it. MacroValues, ProductData and
-// ProductCatalogJson describe the shape of products.json; ProductCatalog reads the file
-// from Resources at start-up and looks products up by Vuforia target name. On AppRoot.
+// Loads products.json and finds a product by Vuforia target name.
 
 using System;
 using System.Collections.Generic;

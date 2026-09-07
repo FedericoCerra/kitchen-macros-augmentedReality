@@ -1,5 +1,4 @@
 {
-  "_comment": "targetName must match the Vuforia target name in StreamingAssets/Vuforia/KitchenMacros.xml (matching is case-insensitive). All macro values are per 100 g. JSON has no comment syntax, so JsonUtility simply ignores this key. PROVENANCE: sedani and lenticchie are transcribed from the physical packages; broccoli and salmone are realistic estimates.",
   "products": [
     {
       "targetName": "sedani",

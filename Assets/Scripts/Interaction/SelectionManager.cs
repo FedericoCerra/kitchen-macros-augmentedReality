@@ -1,5 +1,4 @@
-// Turns a tap into a selected product, by raycasting from the camera against the
-// target colliders. On AppRoot. The only script that polls instead of listening.
+// Tap -> raycast -> selected product.
 
 using System;
 using System.Collections.Generic;

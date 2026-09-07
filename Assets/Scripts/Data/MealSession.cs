@@ -1,5 +1,4 @@
-// The running meal: the list of added items and their totals. On AppRoot, and
-// deliberately unaware of Vuforia so losing a target cannot erase it.
+// The running meal. Knows nothing about Vuforia, so losing a target cannot erase it.
 
 using System;
 using System.Collections.Generic;

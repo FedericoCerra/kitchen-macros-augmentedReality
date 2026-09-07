@@ -1,6 +1,3 @@
-// Fills in the text of the world-space panel. On the panel prefab. It has no Unity
-// callbacks at all: TrackedProduct calls Bind() once when it creates the panel.
-
 using TMPro;
 using UnityEngine;
 

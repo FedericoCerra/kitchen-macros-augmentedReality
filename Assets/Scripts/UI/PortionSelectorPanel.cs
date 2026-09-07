@@ -1,5 +1,5 @@
-// The portion card: slider, live macro preview and Add to meal. On the canvas rather
-// than on the card it shows and hides, so it cannot disable itself.
+// Goes on the canvas, not on the card it hides: a script that disables its own
+// GameObject stops receiving events.
 
 using TMPro;
 using UnityEngine;

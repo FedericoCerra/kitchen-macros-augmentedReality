@@ -1,5 +1,4 @@
-// Links one Vuforia target to its product, owns the info panel floating above it and
-// drives the selection outline. On each of the four target GameObjects.
+// Links a Vuforia target to its product, and owns the panel above it.
 
 using UnityEngine;
 using Vuforia;
