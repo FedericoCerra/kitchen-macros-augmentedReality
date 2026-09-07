@@ -80,6 +80,9 @@ I did not want to hardcode nutritional values into GameObjects. All product data
 }
 ```
 
+The values for the pasta and the lentils come from the packages. The ones for the broccoli
+and the salmon are estimates.
+
 ### 3.3 What goes in world space and what goes on the screen
 
 - **The nutrition panel is in world space**, anchored over the package.
