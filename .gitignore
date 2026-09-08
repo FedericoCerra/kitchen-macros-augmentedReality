@@ -57,4 +57,5 @@ Packages/*.tgz
 Assets/SamplesResources/
 Assets/SamplesResources.meta
 
-docs/DIARIO-SVILUPPO.md
+# local notes, not part of the deliverable
+docs/*.md
