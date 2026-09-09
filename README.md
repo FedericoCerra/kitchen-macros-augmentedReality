@@ -60,8 +60,6 @@ them, extracts features and rates Image Targets from one to five stars.
 
 ![The four targets in the Unity scene](docs/images/targets.png)
 
-*The three flat packages are Image Targets; the lentils can is a Cylinder Target, built from the label peeled off and scanned
-flat.*
 
 ### 3.2 Product data in JSON
 
