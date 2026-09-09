@@ -29,11 +29,9 @@ Target.
 
 ### Why Vuforia and not AR Foundation
 
-I looked at both. AR Foundation is Unity's own wrapper over ARCore and ARKit and it does
+AR Foundation is Unity's wrapper over ARCore and ARKit and it does
 image tracking, but its image tracking works on flat reference images only, there is no
 cylinder target. Since I wanted the can of lentils in the project, that ruled it out.
-
-Vuforia supports Image, Multi and Cylinder Targets, so it was the obvious choice.
 
 ### Render pipeline
 
